@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <title>DipToe</title>
+    <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-1.2.0.min.css') }}" />
+    <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <div class="masthead">
+        <div class="inner">
+            <div class="container">
+                <h1>DipToe</h1>
+            </div>
+        </div>
+    </div>
+    <div class="quickstart">
+        <div class="container">
+            <div class="row">
+                <div class="span5 columns">Quick Blurb About The Project</div>
+                <div class="span5 columns">Email Form Goes Here</div>
+                <div class="span5 columns">Link For More Info</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+    {% block body %}
+    {% endblock body %}
+    </div>
+    <div class="footer">
+        <div class="inner">
+            <div class="container">
+                <p>Brewed and perculated by IRON Labs, Inc.</p>
+            </div>
+        </div
+    </div>
+</body>
+</html>
