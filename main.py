@@ -6,7 +6,7 @@ def announce():
     if request.method == 'POST':
         pass
     # show the quick info about the upcoming site
-    return "This piece of software is new and we want you to want it, real bad"
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.debug = True

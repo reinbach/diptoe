@@ -1,0 +1,19 @@
+.masthead {
+    padding: 10px 0;
+    background: #232323 url('../images/bg_masthead.png') repeat-x scroll center bottom;
+    position: relative;
+    z-index: 10;
+}
+
+.quickstart {
+    background: #bfbfbf;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+    background: #232323 url('../images/bg_footer.png') repeat-x scroll center top;
+    border-top: 1px solid #eeeeee;
+    padding: 20px 0;
+}
