@@ -6,25 +6,52 @@
     <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
 </head>
 <body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="container">
+                <h3><a href="/">DipToe</a></h3>
+                <ul class="nav">
+                    {% set nav_bar = [
+                        ("/", "index", "Home"),
+                        ("/about", "about", "About"),
+                    ] -%}
+                    {% set active_page = active_page|default("index") -%}
+                    {% for href, id, caption in nav_bar %}
+                        <li {% if id == active_page %}class="active"{% endif %}>
+                            <a href="{{ href|e }}">{{ caption|e }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="masthead">
         <div class="inner">
             <div class="container">
-                <h1>DipToe</h1>
+                <h1>Big Splash Here</h1>
             </div>
         </div>
     </div>
     <div class="quickstart">
         <div class="container">
             <div class="row">
-                <div class="span5 columns">Quick Blurb About The Project</div>
-                <div class="span5 columns">Email Form Goes Here</div>
-                <div class="span5 columns">Link For More Info</div>
+                <div class="span8 column">
+                    Fundamental idea behind the product or service (1 sentence max)
+                </div>
+                <div class="span8 column">
+                    <form method="post" action="/">
+                        <div class="input-prepend">
+                            <span class="add-on">Email</span>
+                            <input type="text" name="email" value="" />
+                            <input class="btn primary" type="submit" name="submit" value="Sign Up" />
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-    {% block body %}
-    {% endblock body %}
+        {% block content %}{% endblock content %}
     </div>
     <div class="footer">
         <div class="inner">

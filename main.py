@@ -5,9 +5,12 @@ app = Flask(__name__)
 def announce():
     if request.method == 'POST':
         pass
-    # show the quick info about the upcoming site
     return render_template("index.html")
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template("about.html")
+    
 if __name__ == '__main__':
     app.debug = True
     app.run()

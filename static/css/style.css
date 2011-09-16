@@ -1,6 +1,11 @@
+body {
+   padding-top: 40px; 
+}
+
 .masthead {
     padding: 10px 0;
-    background: #232323 url('../images/bg_masthead.png') repeat-x scroll center bottom;
+    background-color: #049cd9;
+    background-image: -webkit-linear-gradient(#004D9F, #049cd9);
     position: relative;
     z-index: 10;
 }
