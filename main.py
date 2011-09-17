@@ -4,7 +4,7 @@ import re
 
 from flask import Flask, render_template, request, flash, session
 app = Flask(__name__)
-app.secret_key = "\xdchU\xe8\xe1\x06\xd3\xf6\xa5-\xae\x08Fpn\x1fq[\xef\xfdQ\xad*e"
+app.secret_key = "--- super secret key goes here ---"
 
 #---------------------------------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
