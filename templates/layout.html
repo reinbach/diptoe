@@ -25,25 +25,22 @@
             </div>
         </div>
     </div>
-    <div class="masthead">
-        <div class="inner">
-            <div class="container">
-                <h1>Big Splash Here</h1>
-            </div>
-        </div>
-    </div>
+    {% block masthead %}{% endblock masthead %}
     <div class="quickstart">
         <div class="container">
             <div class="row">
-                <div class="span8 column">
-                    Fundamental idea behind the product or service (1 sentence max)
+                <div class="span5 column">
+                    <p>Fundamental idea behind the product or service (1 sentence max)</p>
                 </div>
-                <div class="span8 column">
+                <div class="span9 offset2 column">
                     <form method="post" action="/">
-                        <div class="input-prepend">
-                            <span class="add-on">Email</span>
-                            <input type="text" name="email" value="" />
-                            <input class="btn primary" type="submit" name="submit" value="Sign Up" />
+                        <div class="row {% if error %}error{% endif %}">
+                            <div class="input-prepend">
+                                <span class="add-on"><p>Email</p></span>
+                                <input type="text" name="email" value="" />
+                                <input class="btn primary" type="submit" value="Sign Up" />
+                                <span class="help-inline">{{ error }}</span>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -51,6 +48,17 @@
         </div>
     </div>
     <div class="container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert-message {{ category }}">
+                        <a class="close" href="#">x</a>
+                        <p>{{ message }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
         {% block content %}{% endblock content %}
     </div>
     <div class="footer">

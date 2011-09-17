@@ -10,10 +10,32 @@ body {
     z-index: 10;
 }
 
+.masthead h1 {
+    font-size: 54px;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+.masthead h1, masthead p {
+    text-align: center;
+    margin-bottom: 9px;
+    color: #ffffff;
+}
+
 .quickstart {
     background: #bfbfbf;
     padding: 20px 0;
     margin-bottom: 20px;
+}
+
+div.quickstart h6, div.quickstart p {
+    line-height: 18px;
+    margin-bottom: 9px;
+    color: #333333;
+}
+
+div.quickstart form .row {
+    padding-left: 40px;
 }
 
 .footer {
