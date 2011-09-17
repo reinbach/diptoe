@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>DipToe</title>
-    <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-1.2.0.min.css') }}" />
+    <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
     <link rel="Stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="{{ url_for('static', filename='js/jquery-1.6.4.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-alerts.js') }}" type="text/javascript"></script>
 </head>
 <body>
     <div class="topbar">
@@ -51,7 +53,7 @@
         {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
                 {% for category, message in messages %}
-                    <div class="alert-message {{ category }}">
+                    <div class="alert-message {{ category }} fade in" data-alert="alert">
                         <a class="close" href="#">x</a>
                         <p>{{ message }}</p>
                     </div>
