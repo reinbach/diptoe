@@ -6,6 +6,13 @@ from flask import Flask, render_template, request, flash, session
 app = Flask(__name__)
 app.secret_key = "--- super secret key goes here ---"
 
+GOOGLE_ANALYTICS_CODE = 'UA-...'
+
+#---------------------------------------------------------------------------
+def _render(template, context):
+    context.update(google_analytics_code=GOOGLE_ANALYTICS_CODE)
+    return render_template(template, context=context)
+
 #---------------------------------------------------------------------------
 @app.route('/', methods=['GET', 'POST'])
 def announce():
@@ -34,12 +41,15 @@ def announce():
                     )
                 )
                 flash("Yikes, there was an issure recording your Sign Up", "error")
-    return render_template("index.html", error=error)
+    context = dict(
+        error=error
+    )
+    return _render("index.html", context)
 
 #---------------------------------------------------------------------------
 @app.route('/about', methods=['GET'])
 def about():
-    return render_template("about.html")
+    return _render("about.html", dict())
 
 #---------------------------------------------------------------------------
 def validate_email_address(email):

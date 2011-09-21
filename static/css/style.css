@@ -34,7 +34,7 @@ div.quickstart h6, div.quickstart p {
     color: #333333;
 }
 
-div.quickstart form .row {
+div.quickstart form .clearfix {
     padding-left: 40px;
 }
 
